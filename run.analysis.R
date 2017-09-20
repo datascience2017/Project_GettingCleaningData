@@ -92,13 +92,3 @@ dim(mergeddata)
 tidydata <- sapply(mergeddata[,3:563], FUN= mean)
 summary(tidydata)
 write.csv(tidydata, "C:/Sanjay.Rini/Rini/Big_Data/RWorkingFolder/UCI HAR Dataset//tidydata.txt", row.names = FALSE)
-
-install.packages("knitr")
-knit("makeCodebook.Rmd", output="codebook.md", encoding="ISO8859-1", quiet=TRUE)
-markdownToHTML("codebook.md", "codebook.html")
-
-install.packages("plyr")
-library(ddply)
-tidyData <- ddply(mergedData,
-                  .(Subject, Activity),
-                  .fun=function(x) { colMeans(x[ ,-c(1:2)]) })
