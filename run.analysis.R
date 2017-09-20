@@ -92,4 +92,4 @@ dim(mergeddata)
 tidydata <- sapply(mergeddata[,3:563], FUN= mean)
 summary(tidydata)
 write.csv(tidydata, "C:/Sanjay.Rini/Rini/Big_Data/RWorkingFolder/UCI HAR Dataset//tidydata.txt", row.names = FALSE)
-
+write.csv(tidydata, "C:/Sanjay.Rini/Rini/Big_Data/RWorkingFolder/UCI HAR Dataset//tidydata.csv", row.names = FALSE)
