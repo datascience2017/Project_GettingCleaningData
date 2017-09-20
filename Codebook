@@ -15,8 +15,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 - Its activity label. 
 - An identifier of the subject who carried out the experiment.
 
-Measurements
-
+Measurements (class numeric)
     tBodyAccMeanX
     tBodyAccMeanY
     tBodyAccMeanZ
