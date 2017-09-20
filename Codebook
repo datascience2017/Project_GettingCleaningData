@@ -102,5 +102,5 @@ Data Cleaning was performed in the following steps and accomplished by R script 
 The test and the training data sets have been merged to form a single data set using rbind and cbind functions.
 The data was refined using grepl to keep only the measurements on the mean and standard deviation for each measurement. Remaining columns were removed.
 Descriptive activity names and labels were used appropriately to increase code readability.Activity IDs were replaced with factor variable labeled with Activity names. 
-Created a new dataset using sapply function to calculate means of each variable for each activity and each subject. This was the final dataset 'tidydata' and is created in .csv and .txt formats. 
+Created a new dataset using reshape2 package to calculate means of each variable for each activity and each subject. This was the final dataset 'tidydata' and is created in .csv and .txt formats. 
 Comments have been posted throughout the R script to increase readability and provide understanding to the reader.
