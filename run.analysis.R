@@ -22,9 +22,9 @@
 
 # 1. Merges the training and the test sets to create one data set.
 # read and rbind the subject x and subject y 
-subject_train <- read.table("C:/Sanjay.Rini/Rini/Big_Data/RWorkingFolder/UCI HAR Dataset/train/subject_train.txt",header= FALSE, stringsAsFactors=FALSE)
+subject_train <- read.table("../UCI HAR Dataset/train/subject_train.txt",header= FALSE, stringsAsFactors=FALSE)
 #dim(subject_train) #7352    1
-subject_test <- read.table("C:/Sanjay.Rini/Rini/Big_Data/RWorkingFolder/UCI HAR Dataset/test/subject_test.txt",header= FALSE, stringsAsFactors=FALSE)
+subject_test <- read.table("../UCI HAR Dataset/test/subject_test.txt",header= FALSE, stringsAsFactors=FALSE)
 #dim(subject_test) #2947    1
 
 subject <- rbind(subject_train, subject_test)
@@ -33,10 +33,10 @@ subject <- rbind(subject_train, subject_test)
 colnames(subject)[1] <- "subject"
 
 # rbind the y train and y test 
-y_train <- read.table("C:/Sanjay.Rini/Rini/Big_Data/RWorkingFolder/UCI HAR Dataset/train/y_train.txt",header= FALSE, stringsAsFactors=FALSE)
+y_train <- read.table("../UCI HAR Dataset/train/y_train.txt",header= FALSE, stringsAsFactors=FALSE)
 #dim(y_train) # 7352  11
 
-y_test <- read.table("C:/Sanjay.Rini/Rini/Big_Data/RWorkingFolder/UCI HAR Dataset/test/y_test.txt",header= FALSE, stringsAsFactors=FALSE)
+y_test <- read.table("..r/UCI HAR Dataset/test/y_test.txt",header= FALSE, stringsAsFactors=FALSE)
 #dim(y_test) #2947    1
 
 y_train_test<- rbind(y_train, y_test)
@@ -46,10 +46,10 @@ colnames(y_train_test) <- "activityNum"
 
 # read xtrain and xtest files and rbind them
 
-x_train <- read.table("C:/Sanjay.Rini/Rini/Big_Data/RWorkingFolder/UCI HAR Dataset/train/X_train.txt",header= FALSE, stringsAsFactors=FALSE)
+x_train <- read.table("../UCI HAR Dataset/train/X_train.txt",header= FALSE, stringsAsFactors=FALSE)
 dim(x_train) # 7352  561
 
-x_test <- read.table("C:/Sanjay.Rini/Rini/Big_Data/RWorkingFolder/UCI HAR Dataset/test/X_test.txt",header= FALSE, stringsAsFactors=FALSE)
+x_test <- read.table("../UCI HAR Dataset/test/X_test.txt",header= FALSE, stringsAsFactors=FALSE)
 dim(x_test) # 2947  561
 
 x_train_test <- rbind(x_train, x_test)
@@ -61,7 +61,7 @@ View(mergeddata_test)
 
 
 #reading data in features.txt
-features <- read.table("C:/Sanjay.Rini/Rini/Big_Data/RWorkingFolder/UCI HAR Dataset/features.txt",header= FALSE, stringsAsFactors=FALSE, fill = T)
+features <- read.table("../UCI HAR Dataset/features.txt",header= FALSE, stringsAsFactors=FALSE, fill = T)
 #dim(features) # 561 2
 #View(features)
 
@@ -77,7 +77,7 @@ View(mergeddata1) # 10299    81
 summary(mergeddata$Activity)
 # 3. Uses descriptive activity names to name the activities in the data set
 #reading data in features.txt
-activities <- read.table("C:/Sanjay.Rini/Rini/Big_Data/RWorkingFolder/UCI HAR Dataset/activity_labels.txt", header= FALSE, stringsAsFactors=FALSE, fill = T)
+activities <- read.table("../UCI HAR Dataset/activity_labels.txt", header= FALSE, stringsAsFactors=FALSE, fill = T)
 #View(activities)
 
 # 4. Appropriately labels the data set with descriptive variable names.
@@ -91,5 +91,5 @@ dim(mergeddata)
 # variable for each activity and each subject.
 tidydata <- sapply(mergeddata[,3:563], FUN= mean)
 summary(tidydata)
-write.csv(tidydata, "C:/Sanjay.Rini/Rini/Big_Data/RWorkingFolder/UCI HAR Dataset//tidydata.txt", row.names = FALSE)
-write.csv(tidydata, "C:/Sanjay.Rini/Rini/Big_Data/RWorkingFolder/UCI HAR Dataset//tidydata.csv", row.names = FALSE)
+write.csv(tidydata, "../UCI HAR Dataset//tidydata.txt", row.names = FALSE)
+write.csv(tidydata, "../UCI HAR Dataset//tidydata.csv", row.names = FALSE)
